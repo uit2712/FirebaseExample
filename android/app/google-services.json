@@ -1,0 +1,42 @@
+{
+  "project_info": {
+    "project_number": "783884563877",
+    "firebase_url": "https://herodb-316ad.firebaseio.com",
+    "project_id": "herodb-316ad",
+    "storage_bucket": "herodb-316ad.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:783884563877:android:ffcdd30ed32e7644",
+        "android_client_info": {
+          "package_name": "com.firebasedemo"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "783884563877-crts54juk4603shi9fo9ht7ks3mu16rl.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyA9OKB0RzJfTvNKczyigcO_KUUYLTYrRdQ"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 1,
+          "other_platform_oauth_client": []
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

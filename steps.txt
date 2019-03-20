@@ -1,0 +1,89 @@
+-----------------------FIREBASE EXAMPLE IN REACT NATIVE-----------------------
+- STEP 1: Create your new firebase project
++ Go to firebase console: https://console.firebase.google.com/
++ Click 'Add project' and enter necessary info, then click 'Create project'
+- STEP 2: Create your new database:
++ Click option 'Develop'>'Database' on the left sidebar, then click button 'Create database'
++ Choose 'Start in locked mode', then click 'Enable'
+=> Now, you have your own database
+- STEP 3: Add Firebase to your android app:
++ In your database overview page->click button setting besides 'Project Overview' on the top left
+->choose 'Project settings'
++ In the 'Your apps' card, select a platform to get started: IOS, android, web app->I choose Android
++ Enter info:
+	Android package name: is in file 'android/app/build.gradle'->applicationId: in my example is 'com.firebaseexample'
+	App nick name: name of app, you can choose any name (this is optional)
++ Click 'Register app'
++ Then click button 'Download google-services.json' (save in folder 'android/app')
++ Then click 'Next'
++ Add Firebase SDK:
+---->Edit file 'android/build.gradle':
+buildscript {
+  dependencies {
+    // Add this line
+    classpath 'com.google.gms:google-services:4.0.1'
+  }
+}
+---->Edit file 'android/app/build.gradle':
+dependencies {
+  // Add this line
+  implementation 'com.google.firebase:firebase-core:16.0.1'
+}
+...
+// Add to the bottom of the file
+apply plugin: 'com.google.gms.google-services'
++ Build your app
++ Click 'Next' to verify installation
+- STEP 4: Clone UI from https://github.com/uit2712/HeroUI, then copy necessary files:
+Install modules:
+	npm i --save events react-navigation react-native-gesture-handler react-native-vector-icons
+- STEP 5: Edit Hero model
++ Edit constructor
++ Edit clone function
++ Add function getObjectInfo
+- STEP 6: Add controller HeroController in folder 'controllers'
++ Get all heroes
++ Create new hero
++ Upate hero
++ Delete hero
+
+
+
+---------------------Concepts in Firebase---------------------
+a) Data model in Firebase:
+Cloud Firestore is a NoSQL, document-oriented database.
+Unlike a SQL database, there are no tables or rows.
+Instead, you store data in 'documents', which are organized into 'collections'.
+Each document contains a 'set of key-value pairs' (like json)
++ Documents: In Cloud Firestore, the unit of storage is the document.
+A document is a lightweight record that contains fields, which map to values.
+Each document is identified by a 'name'
+**Example: A document with name 'alovelace' with these key-value pairs
+	first : "Ada"
+	last : "Lovelace"
+	born : 1815
++ Collections: Documents live in collections, which are simply containers for documents.
+For example, you could have a users collection to contain your various users, each represented by a document:
+users
+	alovelace
+		first : "Ada"
+		last : "Lovelace"
+		born : 1815
+	aturing
+		first : "Alan"
+		last : "Turing"
+		born : 1912
++ References: Every document in Cloud Firestore is uniquely identified by its location within the database.
+The previous example showed a document 'alovelace' within the collection 'users'.
+To refer to this location in your code, you can create a reference to it.
+
+	var alovelaceDocumentRef = db.collection('users').doc('alovelace');
+	
+***For convenience, you can also create references by specifying the path to a document or collection
+as a string, with path components separated by a forward slash (/).
+For example, to create a reference to the alovelace document:
+
+	var alovelaceDocumentRef = db.doc('users/alovelace');
+	
+b) Data types: Array, Boolean, Bytes, Date and time, Number (integer, float), Map (key-value pairs),
+Null, Referenece, String
