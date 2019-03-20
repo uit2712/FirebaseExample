@@ -24,20 +24,24 @@ e) Then click button 'Download google-services.json' (save in folder 'android/ap
 f) Then click 'Next'<br>
 g) Add Firebase SDK:<br>
 ---->Edit file 'android/build.gradle':<br>
-buildscript {<br>
-  dependencies {<br>
-    // Add this line<br>
-    classpath 'com.google.gms:google-services:4.0.1'<br>
-  }<br>
-}<br>
+<pre>
+buildscript {
+  dependencies {
+    // Add this line
+    classpath 'com.google.gms:google-services:4.0.1'
+  }
+}
+</pre>
 ---->Edit file 'android/app/build.gradle':<br>
-dependencies {<br>
-  // Add this line<br>
-  implementation 'com.google.firebase:firebase-core:16.0.1'<br>
-}<br>
-...<br>
-// Add to the bottom of the file<br>
-apply plugin: 'com.google.gms.google-services'<br>
+<pre>
+dependencies {
+  // Add this line
+  implementation 'com.google.firebase:firebase-core:16.0.1'
+}
+...
+// Add to the bottom of the file
+apply plugin: 'com.google.gms.google-services'
+</pre>
 h) Build your app<br>
 i) Click 'Next' to verify installation<br>
 <b>4) STEP 4:</b>  Clone UI from https://github.com/uit2712/HeroUI, then copy necessary files:<br>
@@ -65,30 +69,34 @@ a) Documents: In Cloud Firestore, the unit of storage is the document.<br>
 A document is a lightweight record that contains fields, which map to values.<br>
 Each document is identified by a 'name'<br>
 **Example: A document with name 'alovelace' with these key-value pairs<br>
-	first : "Ada"<br>
-	last : "Lovelace"<br>
-	born : 1815<br>
+	<pre>
+	first : "Ada"
+	last : "Lovelace"
+	born : 1815
+	</pre>
 b) Collections: Documents live in collections, which are simply containers for documents.<br>
 For example, you could have a users collection to contain your various users, each represented by a document:<br>
 users<br>
+<pre>
 	alovelace<br>
-		first : "Ada"<br>
-		last : "Lovelace"<br>
-		born : 1815<br>
+		first : "Ada"
+		last : "Lovelace"
+		born : 1815
 	aturing<br>
-		first : "Alan"<br>
-		last : "Turing"<br>
-		born : 1912<br>
+		first : "Alan"
+		last : "Turing"
+		born : 1912
+</pre>
 c) References: Every document in Cloud Firestore is uniquely identified by its location within the database.<br>
 The previous example showed a document 'alovelace' within the collection 'users'.<br>
 To refer to this location in your code, you can create a reference to it.<br>
-
-	var alovelaceDocumentRef = db.collection('users').doc('alovelace');<br>
-	
+<pre>
+	var alovelaceDocumentRef = db.collection('users').doc('alovelace');
+</pre>
 ***For convenience, you can also create references by specifying the path to a document or collection<br>
 as a string, with path components separated by a forward slash (/).<br>
 For example, to create a reference to the alovelace document:<br>
-
-	var alovelaceDocumentRef = db.doc('users/alovelace');<br>
-	
+<pre>
+	var alovelaceDocumentRef = db.doc('users/alovelace');
+</pre>
 2) Data types: Array, Boolean, Bytes, Date and time, Number (integer, float), Map (key-value pairs), Null, Referenece, String
