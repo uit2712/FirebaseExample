@@ -4,9 +4,9 @@ import Hero from '../models/Hero';
 import Message from '../models/Message';
 
 firebase.initializeApp({
-    apiKey: 'AIzaSyBUdfkOVM4g74BnMXqzQo56JZjSLJh_Ag4',
-    authDomain: 'herodb-316ad.firebaseio.com',
-    projectId: 'herodb-316ad'
+    apiKey: '<your_api_key>',
+    authDomain: '<your_domain>',
+    projectId: '<your_project_id>'
 });
 
 let db = firebase.firestore();
